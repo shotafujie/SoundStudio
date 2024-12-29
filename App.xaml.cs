@@ -11,7 +11,7 @@ namespace SoundStudio
             InitializeComponent();
 
             var builder = MauiApp.CreateBuilder();
-            builder.Services.AddTransient<AudioViewModel>();
+            builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddSingleton<AppShell>();
             builder.Services.AddSingleton<MainPage>();
 

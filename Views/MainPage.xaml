@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SoundStudio.ViewModels"
+             xmlns:ScottPlot="clr-namespace:ScottPlot.Maui;assembly=ScottPlot.Maui"
              x:Class="SoundStudio.Views.MainPage"
-             x:DataType="local:AudioViewModel">
-
+             x:DataType="local:MainViewModel">
     <ContentPage.BindingContext>
-        <local:AudioViewModel />
+        <local:MainViewModel />
     </ContentPage.BindingContext>
     <VerticalStackLayout Padding="20">
-        <Button Text="音声ファイルを読み込む" Command="{Binding LoadAudioCommand}" />
-        <Label Text="{Binding AudioModel.FilePath}" />
-        <Label Text="{Binding ErrorMessage}" TextColor="Red" IsVisible="{Binding IsErrorVisible}" />
+        <Button Text="音声ファイルを読み込む" Clicked="OnLoadAudioCommandExecuted" />
+        <Label Text="{Binding InputFilePath}" />
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+        <ScottPlot:MauiPlot x:Name="inputWaveform"  HeightRequest="200"/>
     </VerticalStackLayout>
 </ContentPage>
