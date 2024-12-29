@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SoundStudio.ViewModels"
+             x:Class="SoundStudio.Views.MainPage"
+             x:DataType="local:AudioViewModel">
+
+    <ContentPage.BindingContext>
+        <local:AudioViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="20">
+        <Button Text="音声ファイルを読み込む" Command="{Binding LoadAudioCommand}" />
+        <Label Text="{Binding AudioModel.FilePath}" />
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" IsVisible="{Binding IsErrorVisible}" />
+    </VerticalStackLayout>
+</ContentPage>
