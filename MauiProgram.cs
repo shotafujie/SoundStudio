@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using ScottPlot.Maui;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace SoundStudio
 {
@@ -11,6 +13,7 @@ namespace SoundStudio
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseScottPlot()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
